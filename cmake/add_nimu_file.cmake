@@ -1,0 +1,20 @@
+include("${PROJECT_SOURCE_DIR}/cmake/message.cmake")
+
+
+function(add_nimu_file CONFIG_FILE)
+
+  set(CONFIG_FILE_TARGET      ${CONFIG_FILE}_target)
+  set(CONFIG_FILE_SOURCE      ${CMAKE_CURRENT_SOURCE_DIR}/${CONFIG_FILE})
+  set(CONFIG_FILE_DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/${CONFIG_FILE})
+
+  #add_custom_command(
+  #  OUTPUT ${CONFIG_FILE_DESTINATION}
+  #  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CONFIG_FILE_SOURCE} ${CONFIG_FILE_DESTINATION}
+  #)
+
+  #add_custom_target(${CONFIG_FILE_TARGET} ALL DEPENDS ${CONFIG_FILE_DESTINATION})
+
+  configure_file(${CONFIG_FILE_SOURCE} ${CONFIG_FILE_DESTINATION} COPYONLY)
+
+endfunction(add_nimu_file)
+
