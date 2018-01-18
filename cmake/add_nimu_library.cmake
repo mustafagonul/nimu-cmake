@@ -91,4 +91,3 @@ function(add_nimu_library)
   set_target_properties(${LIBRARY_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 
 endfunction(add_nimu_library)
-
